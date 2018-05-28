@@ -61,8 +61,8 @@ class Zend_Log_Writer_Db extends Zend_Log_Writer_Abstract
      */
     public function __construct($db, $table, $columnMap = null)
     {
-        $this->_db    = $db;
-        $this->_table = $table;
+        $this->_db        = $db;
+        $this->_table     = $table;
         $this->_columnMap = $columnMap;
     }
 
@@ -72,7 +72,7 @@ class Zend_Log_Writer_Db extends Zend_Log_Writer_Abstract
      * @param  array|Zend_Config $config
      * @return Zend_Log_Writer_Db
      */
-    static public function factory($config)
+    public static function factory($config)
     {
         $config = self::_parseConfig($config);
         $config = array_merge(array(
