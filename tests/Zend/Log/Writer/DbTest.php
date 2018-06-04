@@ -60,7 +60,7 @@ class Zend_Log_Writer_DbTest extends PHPUnit\Framework\TestCase
 
         // insert should be called once...
         $this->assertContains('insert', array_keys($this->db->calls));
-        $this->assertEquals(1, count($this->db->calls['insert']));
+        $this->assertCount(1, $this->db->calls['insert']);
 
         // ...with the correct table and binds for the database
         $binds = array('message'  => $fields['message'],
@@ -86,7 +86,7 @@ class Zend_Log_Writer_DbTest extends PHPUnit\Framework\TestCase
 
         // insert should be called once...
         $this->assertContains('insert', array_keys($this->db->calls));
-        $this->assertEquals(1, count($this->db->calls['insert']));
+        $this->assertCount(1, $this->db->calls['insert']);
 
         // ...with the correct table and binds for the database
         $binds = array('new-message-field' => $message,
