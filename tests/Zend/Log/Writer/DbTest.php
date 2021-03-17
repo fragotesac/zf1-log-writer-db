@@ -31,7 +31,7 @@
  */
 class Zend_Log_Writer_DbTest extends PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         $this->tableName = 'db-table-name';
 
