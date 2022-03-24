@@ -45,7 +45,7 @@ class Zend_Log_Writer_DbTest extends PHPUnit\Framework\TestCase
             $this->writer->setFormatter(new Zend_Log_Formatter_Simple());
             $this->fail();
         } catch (Exception $e) {
-            $this->assertTrue($e instanceof Zend_Log_Exception);
+            $this->assertInstanceOf(Zend_Log_Exception::class, $e);
             $this->assertMatchesRegularExpression('/does not support formatting/i', $e->getMessage());
         }
     }
@@ -106,7 +106,7 @@ class Zend_Log_Writer_DbTest extends PHPUnit\Framework\TestCase
             $this->writer->write(array('message' => 'this should fail'));
             $this->fail();
         } catch (Exception $e) {
-            $this->assertTrue($e instanceof Zend_Log_Exception);
+            $this->assertInstanceOf(Zend_Log_Exception::class, $e);
             $this->assertEquals('Database adapter is null', $e->getMessage());
         }
     }
@@ -122,7 +122,7 @@ class Zend_Log_Writer_DbTest extends PHPUnit\Framework\TestCase
         )));
 
         $logger = Zend_Log::factory($cfg['log']);
-        $this->assertTrue($logger instanceof Zend_Log);
+        $this->assertInstanceOf(Zend_Log::class, $logger);
     }
 
     /**
@@ -137,7 +137,7 @@ class Zend_Log_Writer_DbTest extends PHPUnit\Framework\TestCase
         try {
             $this->writer->setFormatter(new StdClass());
         } catch (Exception $e) {
-            $this->assertTrue($e instanceof PHPUnit\Framework\Error\Error);
+            $this->assertInstanceOf(PHPUnit\Framework\Error\Error::class, $e);
             $this->assertContains('must implement interface', $e->getMessage());
         }
     }
