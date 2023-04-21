@@ -31,6 +31,10 @@
  */
 class Zend_Log_Writer_DbTest extends PHPUnit\Framework\TestCase
 {
+    protected $db;
+    protected $tableName;
+    protected $writer;
+
     public function setUp(): void
     {
         $this->tableName = 'db-table-name';
