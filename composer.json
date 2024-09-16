@@ -1,5 +1,5 @@
 {
-    "name": "diablomedia/zendframework1-log-writer-db",
+    "name": "fragotesac/zf1-log-writer-db",
     "description": "Zend Framework 1 Log_Writer_Db component",
     "type": "library",
     "keywords": [
